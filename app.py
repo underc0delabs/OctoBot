@@ -51,7 +51,7 @@ def setup(webhook_url=None):
         dp.add_handler(CommandHandler("test", test))
 
         # on noncommand i.e message - echo the message on Telegram
-        dp.add_handler(MessageHandler(Filters.text, echo))
+        dp.add_handler(MessageHandler(Filters.all, echo))
 
         # log all errors
         dp.add_error_handler(error)
