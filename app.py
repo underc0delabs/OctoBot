@@ -24,7 +24,7 @@ def test(bot, update):
 
 
 def echo(bot, update):
-    update.message.reply_text('%s : %s' % ('Echo' ,update.message.text))
+    update.message.reply_text('%s : %s' % (update.message.from_user ,update.message.text))
 
 
 def error(bot, update, error):
