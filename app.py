@@ -19,12 +19,12 @@ def help(bot, update):
 
 def test(bot, update):
     update.message.reply_text('testinit')
-    update.message.reply_text(dir(update.message.chat))
+    update.message.reply_text(dir(update.message.chat.GROUP))
     update.message.reply_text('testend')
 
 
 def echo(bot, update):
-    update.message.reply_text('%s : %s' % (update.message.from_user ,update.message.text))
+    update.message.reply_text('%s: %s' % (update.message.from_user.username ,update.message.text))
 
 
 def error(bot, update, error):
