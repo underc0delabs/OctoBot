@@ -19,8 +19,9 @@ def help(bot, update):
 
 def test(bot, update):
     update.message.reply_text('testinit')
-    update.message.reply_text(update.message.chat.id)
-    update.message.reply_text(update.message.chat.type)
+    if update.message.chat.type=='group':
+        if 'Underc0de' in update.message.chat.title:
+            update.message.reply_text('Chat de grupo correcto')
     update.message.reply_text('testend')
 
 
