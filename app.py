@@ -19,7 +19,7 @@ def help(bot, update):
 
 
 def echo(bot, update):
-    update.message.reply_text(update.message.chat + ': ' + update.message.text)
+    update.message.reply_text(“%s : %s” % ("Echo" ,update.message.text))
 
 
 def error(bot, update, error):
