@@ -9,6 +9,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 TOKEN = '514089417:AAEIvJE2fRpjdRr28GXsMo2MAcXHs4c8u4M'
 
+chatlog = ["Inicio del log:"]
 
 def start(bot, update):
     update.message.reply_text('Underc0de Grupo oficial de la comunidad Underc0de.org Unete => https://t.me/underc0deoficial')
@@ -26,9 +27,18 @@ def test(bot, update):
 
 
 def echo(bot, update):
-    update.message.reply_text('%s: %s' % (update.message.from_user.username ,update.message.text))
+    if update.message.chat.type=='group':
+        if 'Underc0de' in update.message.chat.title:
+            chatlog.append('%s: %s' % (update.message.from_user.username ,update.message.text))
+            while chatlog.count > 999:
+                del chatlog[0]
+            with open('log.txt', 'w+') as f:
+                for msg in chatlog:
+                    f.write('%s\n' % (msg.str));
+                
 
 
+                
 def error(bot, update, error):
     logger.warning('No puedo afirmar ni denegar que ha sucedido un error.')
 
