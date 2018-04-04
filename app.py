@@ -17,6 +17,11 @@ def start(bot, update):
 def help(bot, update):
     update.message.reply_text('La ayuda es para los debiles.')
 
+def test(bot, update):
+    update.message.reply_text('testinit')
+    update.message.reply_text(dir(update.message))
+    update.message.reply_text('testend')
+
 
 def echo(bot, update):
     update.message.reply_text(“%s : %s” % ("Echo" ,update.message.text))
@@ -41,6 +46,7 @@ def setup(webhook_url=None):
         dp = updater.dispatcher
         dp.add_handler(CommandHandler("start", start))
         dp.add_handler(CommandHandler("help", help))
+        dp.add_handler(CommandHandler("test", test))
 
         # on noncommand i.e message - echo the message on Telegram
         dp.add_handler(MessageHandler(Filters.text, echo))
