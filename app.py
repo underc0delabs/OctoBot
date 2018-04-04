@@ -19,7 +19,7 @@ def help(bot, update):
 
 def test(bot, update):
     update.message.reply_text('testinit')
-    update.message.reply_text(dir(update.message))
+    update.message.reply_text(dir(update.message.chat))
     update.message.reply_text('testend')
 
 
