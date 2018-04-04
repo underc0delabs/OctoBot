@@ -7,15 +7,15 @@ from telegram.ext import Dispatcher, CommandHandler, MessageHandler, Updater, Fi
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
-TOKEN = 'token'
+TOKEN = '514089417:AAEIvJE2fRpjdRr28GXsMo2MAcXHs4c8u4M'
 
 
 def start(bot, update):
-    update.message.reply_text('welcome MESSAGE')
+    update.message.reply_text('Underc0de Grupo oficial de la comunidad Underc0de.org Unete => https://t.me/underc0deoficial')
 
 
 def help(bot, update):
-    update.message.reply_text('help message')
+    update.message.reply_text('La ayuda es para los debiles.')
 
 
 def echo(bot, update):
@@ -23,7 +23,7 @@ def echo(bot, update):
 
 
 def error(bot, update, error):
-    logger.warning('Update "%s" caused error "%s"' % (update, error))
+    logger.warning('No puedo afirmar ni denegar que ha sucedido un error.')
 
 # Write your handlers here
 
