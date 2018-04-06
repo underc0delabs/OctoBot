@@ -1,5 +1,6 @@
 import os
 import html
+import _thread
 import logging
 import http.server
 import socketserver
@@ -15,16 +16,17 @@ TOKEN = '514089417:AAEIvJE2fRpjdRr28GXsMo2MAcXHs4c8u4M'
 
 chatlog = ["Inicio del log:"]
 
-PORT = 8080
+        
 
-web_dir = os.path.join(os.path.dirname(__file__), 'data')
-os.chdir(web_dir)
 
-Handler = http.server.SimpleHTTPRequestHandler
-httpd = socketserver.TCPServer(("", PORT), Handler)
-print("serving at port", PORT)
-httpd.serve_forever()
-
+def initServer(serverName):
+    PORT = 8080
+    web_dir = os.path.join(os.path.dirname(__file__), 'data')
+    os.chdir(web_dir)
+    Handler = http.server.SimpleHTTPRequestHandler
+    httpd = socketserver.TCPServer(("", PORT), Handler)
+    print("serving at port", PORT)
+    httpd.serve_forever()
 
 def start(bot, update):
     update.message.reply_text('Underc0de Grupo oficial de la comunidad Underc0de.org Unete => https://t.me/underc0deoficial')
@@ -89,6 +91,9 @@ def setup(webhook_url=None):
         bot.set_webhook()  # Delete webhook
         updater.start_polling()
         updater.idle()
+    print 'Por iniciar hilo del WebServer'
+    _thread.start_new_thread( print_time, ("HTTP/SERVER", 2, ) )
+    print 'Hilo iniciado?'
 
 
 if __name__ == '__main__':
