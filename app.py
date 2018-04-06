@@ -65,8 +65,7 @@ def setup(webhook_url=None):
         dp = updater.dispatcher
         dp.add_handler(CommandHandler("start", start))
         dp.add_handler(CommandHandler("help", help))
-        dp.add_handler(CommandHandler("test", test))
-
+        
         # on noncommand i.e message - echo the message on Telegram
         dp.add_handler(MessageHandler(Filters.all, echo))
 
