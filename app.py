@@ -16,13 +16,13 @@ TOKEN = '514089417:AAEIvJE2fRpjdRr28GXsMo2MAcXHs4c8u4M'
 
 chatlog = ["Inicio del log:"]
 
-        
+
+web_dir = os.path.join(os.path.dirname(__file__), 'data')
+os.chdir(web_dir)
 
 
 def initServer(serverName):
     PORT = 8080
-    web_dir = os.path.join(os.path.dirname(__file__), 'data')
-    os.chdir(web_dir)
     Handler = http.server.SimpleHTTPRequestHandler
     httpd = socketserver.TCPServer(("", PORT), Handler)
     print("serving at port", PORT)
@@ -49,7 +49,7 @@ def echo(bot, update):
             chatlog.append('%s: %s' % (update.message.from_user.username ,update.message.text))
             while len(chatlog) > 999:
                 del chatlog[0]
-            with open('data/log.txt', 'w+') as f:
+            with open('log.txt', 'w+') as f:
                 for msg in chatlog:
                     f.write('%s\n' % (html.escape(msg)));
                 
