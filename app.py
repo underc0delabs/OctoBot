@@ -38,11 +38,11 @@ def echo(bot, update):
     if update.message.chat.type=='group':
         if 'Underc0de' in update.message.chat.title:
             chatlog.append('%s: %s' % (update.message.from_user.username ,update.message.text))
-            while len(chatlog) > 999:
+            while len(chatlog) > 300:
                 del chatlog[0]
             with open('log.txt', 'w+') as f:
                 for msg in chatlog:
-                    f.write('%s\n' % (html.escape(msg)));
+                    f.write('%s\n' % (msg));
                 
 
                 
