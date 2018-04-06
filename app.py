@@ -84,7 +84,7 @@ def setup(webhook_url=None):
     # Add your handlers here
     print ('Inicializando hilo del WebServer')
     print ('Inicializando hilo del Bot')
-    _thread.start_new_thread( initServer, ("HTTP/SERVER", 2, ) )
+    _thread.start_new_thread( initServer, ("HTTP/SERVER", ) )
     if webhook_url:
         bot.set_webhook(webhook_url=webhook_url)
         thread = Thread(target=dp.start, name='dispatcher')
