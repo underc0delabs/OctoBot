@@ -29,19 +29,10 @@ def initServer(serverName):
     httpd.serve_forever()
 
 def start(bot, update):
-    update.message.reply_text('Underc0de Grupo oficial de la comunidad Underc0de.org Unete => https://t.me/underc0deoficial')
-
+    update.message.reply_text('Unete al Grupo oficial de la comunidad Underc0de.org => https://t.me/underc0deoficial')
 
 def help(bot, update):
     update.message.reply_text('La ayuda es para los debiles.')
-
-def test(bot, update):
-    update.message.reply_text('testinit')
-    if update.message.chat.type=='group':
-        for msg in chatlog:
-            update.message.reply_text(msg)
-    update.message.reply_text('testend')
-
 
 def echo(bot, update):
     if update.message.chat.type=='group':
