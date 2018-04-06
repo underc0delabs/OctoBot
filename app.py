@@ -1,4 +1,5 @@
 import os
+import html
 import logging
 from queue import Queue
 from threading import Thread
@@ -35,7 +36,7 @@ def echo(bot, update):
                 del chatlog[0]
             with open('data/log.txt', 'w+') as f:
                 for msg in chatlog:
-                    f.write('%s\n' % (msg));
+                    f.write('%s\n' % (html.escape(msg)));
                 
 
                 
