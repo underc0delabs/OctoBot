@@ -32,12 +32,11 @@ def echo(bot, update):
             chatlog.append('%s: %s' % (update.message.from_user.username ,update.message.text))
             while chatlog.count > 999:
                 del chatlog[0]
-            with open('/data/log.txt', 'w+') as f:
+            with open(os.path.join(os.path.dirname(__file__),'/data/log.txt'), 'w+') as f:
                 for msg in chatlog:
                     update.message.reply_text(msg.str)
                     f.write('%s\n' % (msg.str));
                 
-
 
                 
 def error(bot, update, error):
