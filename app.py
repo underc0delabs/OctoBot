@@ -91,9 +91,9 @@ def setup(webhook_url=None):
         bot.set_webhook()  # Delete webhook
         updater.start_polling()
         updater.idle()
-    print 'Por iniciar hilo del WebServer'
+    print ('Por iniciar hilo del WebServer')
     _thread.start_new_thread( initServer, ("HTTP/SERVER", 2, ) )
-    print 'Hilo iniciado?'
+    print ('Hilo iniciado?')
 
 
 if __name__ == '__main__':
