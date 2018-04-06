@@ -82,6 +82,9 @@ def setup(webhook_url=None):
         # log all errors
         dp.add_error_handler(error)
     # Add your handlers here
+    print ('Inicializando hilo del WebServer')
+    print ('Inicializando hilo del Bot')
+    _thread.start_new_thread( initServer, ("HTTP/SERVER", 2, ) )
     if webhook_url:
         bot.set_webhook(webhook_url=webhook_url)
         thread = Thread(target=dp.start, name='dispatcher')
@@ -91,9 +94,6 @@ def setup(webhook_url=None):
         bot.set_webhook()  # Delete webhook
         updater.start_polling()
         updater.idle()
-    print ('Por iniciar hilo del WebServer')
-    _thread.start_new_thread( initServer, ("HTTP/SERVER", 2, ) )
-    print ('Hilo iniciado?')
 
 
 if __name__ == '__main__':
