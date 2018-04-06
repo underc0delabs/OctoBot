@@ -35,7 +35,6 @@ def echo(bot, update):
                 del chatlog[0]
             with open('data/log.txt', 'w+') as f:
                 for msg in chatlog:
-                    update.message.reply_text(msg.str)
                     f.write('%s\n' % (msg.str));
                 
 
