@@ -21,7 +21,6 @@ def help(bot, update):
 
 def test(bot, update):
     update.message.reply_text('testinit')
-    update.message.reply_text(__file__)
     if update.message.chat.type=='group':
         for msg in chatlog:
             update.message.reply_text(msg)
