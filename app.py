@@ -22,7 +22,7 @@ def test(bot, update):
     update.message.reply_text('testinit')
     if update.message.chat.type=='group':
         for msg in chatlog:
-            update.message.reply_text(msg.str)
+            update.message.reply_text(msg)
     update.message.reply_text('testend')
 
 
