@@ -30,7 +30,7 @@ def echo(bot, update):
     if update.message.chat.type=='group':
         if 'Underc0de' in update.message.chat.title:
             chatlog.append('%s: %s' % (update.message.from_user.username ,update.message.text))
-            while int(chatlog.count) > 999:
+            while len(chatlog) > 999:
                 del chatlog[0]
             with open(os.path.join(os.path.dirname(__file__),'/data/log.txt'), 'w+') as f:
                 for msg in chatlog:
