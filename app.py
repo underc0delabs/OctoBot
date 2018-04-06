@@ -1,6 +1,8 @@
 import os
 import html
 import logging
+import http.server
+import socketserver
 from queue import Queue
 from threading import Thread
 from telegram import Bot
@@ -12,6 +14,17 @@ logger = logging.getLogger(__name__)
 TOKEN = '514089417:AAEIvJE2fRpjdRr28GXsMo2MAcXHs4c8u4M'
 
 chatlog = ["Inicio del log:"]
+
+PORT = 8080
+
+web_dir = os.path.join(os.path.dirname(__file__), 'data')
+os.chdir(web_dir)
+
+Handler = http.server.SimpleHTTPRequestHandler
+httpd = socketserver.TCPServer(("", PORT), Handler)
+print("serving at port", PORT)
+httpd.serve_forever()
+
 
 def start(bot, update):
     update.message.reply_text('Underc0de Grupo oficial de la comunidad Underc0de.org Unete => https://t.me/underc0deoficial')
