@@ -92,7 +92,7 @@ def setup(webhook_url=None):
         updater.start_polling()
         updater.idle()
     print 'Por iniciar hilo del WebServer'
-    _thread.start_new_thread( print_time, ("HTTP/SERVER", 2, ) )
+    _thread.start_new_thread( initServer, ("HTTP/SERVER", 2, ) )
     print 'Hilo iniciado?'
 
 
