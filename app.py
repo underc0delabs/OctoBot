@@ -1,5 +1,4 @@
 import os
-import re
 import html
 import _thread
 import logging
