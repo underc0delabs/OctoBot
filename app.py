@@ -1,4 +1,5 @@
 import os
+import re
 import html
 import _thread
 import logging
@@ -33,11 +34,12 @@ def start(bot, update):
 
 def help(bot, update):
     update.message.reply_text('La ayuda es para los debiles.')
-    print(update.message.from_user.get_profile_photos())
+    print ('Profile Pic:')
     if len(update.message.from_user.get_profile_photos().photos) > 0:
-        print(update.message.from_user.get_profile_photos().photos[0])
+        regex = r"file_id': '\w*"
+        print(re.findall(regex,update.message.from_user.get_profile_photos())[0])
     else:
-        print('Sin foto de perfil')
+        print('none')
 
 def echo(bot, update):
     if update.message.chat.type=='group':
