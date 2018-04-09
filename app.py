@@ -14,7 +14,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 TOKEN = '514089417:AAEIvJE2fRpjdRr28GXsMo2MAcXHs4c8u4M'
 
-chatlog = ["Inicio del log:"]
+chatlog = []
 
 
 web_dir = os.path.join(os.path.dirname(__file__), 'data')
