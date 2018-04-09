@@ -43,13 +43,13 @@ def echo(bot, update):
             mensaje = update.message.text
             if len(update.message.photo) > 0:
                 mensaje = 'IMG_TG123' + update.message.photo[0].file_id
-
-            chatlog.append('%s#|~#&@#%s#|~#&@#%s' % (profilepic, update.message.from_user.username ,mensaje))
-            while len(chatlog) > 300:
-                del chatlog[0]
-            with open('log.txt', 'w+') as f:
-                for msg in chatlog:
-                    f.write('%s\n' % (msg));
+            if mensaje != 'None':
+              chatlog.append('%s#|~#&@#%s#|~#&@#%s' % (profilepic, update.message.from_user.username ,mensaje))
+              while len(chatlog) > 300:
+                  del chatlog[0]
+              with open('log.txt', 'w+') as f:
+                  for msg in chatlog:
+                      f.write('%s\n' % (msg));
                 
 
                 
