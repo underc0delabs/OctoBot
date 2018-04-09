@@ -33,20 +33,18 @@ def start(bot, update):
 
 def help(bot, update):
     update.message.reply_text('La ayuda es para los debiles.')
-    print ('Profile Pic:')
-    if len(update.message.from_user.get_profile_photos().photos) > 0:
-        print(update.message.from_user.get_profile_photos())
-        print(update.message.from_user.get_profile_photos().photos)
-        print(update.message.from_user.get_profile_photos().photos[0])
-        print(update.message.from_user.get_profile_photos().photos[0][0])
-        print(update.message.from_user.get_profile_photos().photos[0][0].file_id)
-    else:
-        print('none')
 
 def echo(bot, update):
     if update.message.chat.type=='group':
         if 'Underc0de' in update.message.chat.title:
-            chatlog.append('%s: %s' % (update.message.from_user.username ,update.message.text))
+            profilepic = 'none'
+            if len(update.message.from_user.get_profile_photos().photos) > 0:
+                profilepic = update.message.from_user.get_profile_photos().photos[0][0].file_id
+            mensaje = update.message.text
+            if len(update.message.photo) > 0:
+                mensaje = 'IMG_TG123' + update.message.photo.file_id
+
+            chatlog.append('%s#|~#&@#%s#|~#&@#%s' % (profilepic, update.message.from_user.username ,mensaje))
             while len(chatlog) > 300:
                 del chatlog[0]
             with open('log.txt', 'w+') as f:
