@@ -36,9 +36,9 @@ def help(bot, update):
     print ('Profile Pic:')
     if len(update.message.from_user.get_profile_photos().photos) > 0:
         print(update.message.from_user.get_profile_photos())
-        print(update.message.from_user.get_profile_photos()photos)
-        print(update.message.from_user.get_profile_photos()photos[0])
-        print(update.message.from_user.get_profile_photos()photos[0].file_id)
+        print(update.message.from_user.get_profile_photos().photos)
+        print(update.message.from_user.get_profile_photos().photos[0])
+        print(update.message.from_user.get_profile_photos().photos[0].file_id)
     else:
         print('none')
 
