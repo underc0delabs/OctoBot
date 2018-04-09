@@ -41,6 +41,7 @@ def echo(bot, update):
             if len(update.message.from_user.get_profile_photos().photos) > 0:
                 profilepic = update.message.from_user.get_profile_photos().photos[0][0].file_id
             mensaje = update.message.text
+            print (update.message.photo)
             if len(update.message.photo) > 0:
                 mensaje = 'IMG_TG123' + update.message.photo.file_id
 
