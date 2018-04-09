@@ -36,6 +36,8 @@ def help(bot, update):
     update.message.reply_text('La ayuda es para los debiles.')
     print ('Profile Pic:')
     if len(update.message.from_user.get_profile_photos().photos) > 0:
+        print(update.message.from_user.get_profile_photos())
+        print(update.message.from_user.get_profile_photos()['photos'].[0].[file_id])
         regex = r"file_id': '\w*"
         print(re.findall(regex,update.message.from_user.get_profile_photos())[0])
     else:
