@@ -33,7 +33,11 @@ def start(bot, update):
 
 def help(bot, update):
     update.message.reply_text('La ayuda es para los debiles.')
-    print(update.message.from_user.get_profile_photos().photos)
+    print(update.message.from_user.get_profile_photos())
+    if len(update.message.from_user.get_profile_photos().photos) > 0:
+        print(update.message.from_user.get_profile_photos().photos[0])
+    else:
+        print('Sin foto de perfil')
 
 def echo(bot, update):
     if update.message.chat.type=='group':
