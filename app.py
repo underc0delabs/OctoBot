@@ -49,7 +49,7 @@ def echo(bot, update):
                   del chatlog[0]
               with open('log.txt', 'w+') as f:
                   for msg in chatlog:
-                      f.write('%s\n' % (msg));
+                      f.write('%s;<^¡] ¬¬\n' % (msg));
                 
 
                 
