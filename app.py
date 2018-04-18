@@ -35,9 +35,7 @@ def help(bot, update):
     update.message.reply_text('La ayuda es para los debiles.')
 
 def echo(bot, update):
-    print(update.message.chat.type)
-    if update.message.chat.type=='group':
-        print(update.message.chat.title)
+    if (update.message.chat.type=='group' or update.message.chat.type=='supergroup'):
         if 'Underc0de' in update.message.chat.title:
             profilepic = 'none'
             if len(update.message.from_user.get_profile_photos().photos) > 0:
