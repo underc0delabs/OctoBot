@@ -36,6 +36,7 @@ def help(bot, update):
 
 def echo(bot, update):
     if update.message.chat.type=='group':
+        print(update.message.chat.title)
         if 'Underc0de' in update.message.chat.title:
             profilepic = 'none'
             if len(update.message.from_user.get_profile_photos().photos) > 0:
