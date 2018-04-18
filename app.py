@@ -35,6 +35,7 @@ def help(bot, update):
     update.message.reply_text('La ayuda es para los debiles.')
 
 def echo(bot, update):
+    print(update.message.chat.type)
     if update.message.chat.type=='group':
         print(update.message.chat.title)
         if 'Underc0de' in update.message.chat.title:
